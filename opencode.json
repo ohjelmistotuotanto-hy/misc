@@ -1,62 +1,30 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "local/gpt-5-mini",
-  "providers": {
-    "local": {
-      "name": "CurreChat API",
-      "package": "@opencode/ai/providers/openai-compatible",
-      "settings": {
+  "model": "currechat/gpt-5-mini",
+  "provider": {
+    "currechat": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "CurreChat",
+      "options": {
         "baseURL": "https://curre.helsinki.fi/chat/api/external/v1",
-        "apiKey": "<YOUR API KEY OR SUBSTITUTION HERE>"
+        "apiKey": "OMA_API_AVAIN"
       },
       "models": {
         "gpt-5-mini": {
-          "modelID": "gpt-5-mini",
-          "capabilities": {
-            "tools": true,
-            "input": ["text"],
-            "output": ["text"]
-          },
-          "limit": {
-            "context": 128000,
-            "output": 16384
-          }
+          "name": "GPT-5 mini",
+          "limit": { "context": 128000, "output": 16384 }
         },
         "gpt-5.5": {
-          "modelID": "gpt-5.5",
-          "capabilities": {
-            "tools": true,
-            "input": ["text"],
-            "output": ["text"]
-          },
-          "limit": {
-            "context": 128000,
-            "output": 16384
-          }
+          "name": "GPT-5.5",
+          "limit": { "context": 128000, "output": 16384 }
         },
         "gpt-6.1-sol": {
-          "modelID": "gpt-6.1-sol",
-          "capabilities": {
-            "tools": true,
-            "input": ["text"],
-            "output": ["text"]
-          },
-          "limit": {
-            "context": 128000,
-            "output": 16384
-          }
+          "name": "GPT-6.1 Sol",
+          "limit": { "context": 128000, "output": 16384 }
         },
-        "mistral-large-3-1": {
-          "modelID": "Mistral-Large-3-1",
-          "capabilities": {
-            "tools": true,
-            "input": ["text"],
-            "output": ["text"]
-          },
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
+        "Mistral-Large-3-1": {
+          "name": "Mistral Large 3.1",
+          "limit": { "context": 128000, "output": 8192 }
         }
       }
     }
